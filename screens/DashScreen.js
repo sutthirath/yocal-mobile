@@ -2,6 +2,7 @@ import React from "react";
 import { StyleSheet, Text, View, Image, ScrollView } from "react-native";
 import profile from "../assets/images/profile.jpg";
 import Chat from "../components/Chat.js";
+import Favorites from "../components/Favorites";
 
 export default class DashScreen extends React.Component {
   static navigationOptions = {
@@ -23,9 +24,17 @@ export default class DashScreen extends React.Component {
             <Text>Sean Vilaysane</Text>
           </View>
         </View>
-        <ScrollView horizontal style={styles.card}>
-          <Chat />
+        <ScrollView horizontal>
+          <View style={styles.card}>
+            <Chat />
+          </View>
+          <View style={styles.card}>
+            <Chat />
+          </View>
         </ScrollView>
+        <View style={[styles.card, styles.fav]}>
+          <Favorites />
+        </View>
       </ScrollView>
     );
   }
@@ -48,11 +57,15 @@ const styles = StyleSheet.create({
   card: {
     height: 250,
     width: 300,
+    margin: 20,
     backgroundColor: "white",
     borderRadius: 5,
     shadowOpacity: 0.75,
     shadowRadius: 5,
     shadowColor: "grey",
     shadowOffset: { height: 0, width: 0 }
+  },
+  fav: {
+    width: 370
   }
 });
