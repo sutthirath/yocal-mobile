@@ -6,8 +6,8 @@ import {
 } from "react-navigation";
 
 import TabBarIcon from "../components/TabBarIcon";
-import HomeScreen from "../screens/HomeScreen";
-import LinksScreen from "../screens/LinksScreen";
+import HomeScreen from "../screens/DashScreen";
+import LinksScreen from "../screens/SearchScreen";
 import SettingsScreen from "../screens/SettingsScreen";
 
 const HomeStack = createStackNavigator({
@@ -15,14 +15,14 @@ const HomeStack = createStackNavigator({
 });
 
 HomeStack.navigationOptions = {
-  tabBarLabel: "Home",
+  tabBarLabel: "Dashboard",
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
       focused={focused}
       name={
         Platform.OS === "ios"
-          ? `ios-home${focused ? "" : "-outline"}`
-          : "md-home"
+          ? `ios-chatbubbles${focused ? "" : "-outline"}`
+          : "md-chatbubbles"
       }
     />
   )
@@ -33,11 +33,11 @@ const LinksStack = createStackNavigator({
 });
 
 LinksStack.navigationOptions = {
-  tabBarLabel: "Links",
+  tabBarLabel: "Search",
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
       focused={focused}
-      name={Platform.OS === "ios" ? "ios-link" : "md-link"}
+      name={Platform.OS === "ios" ? "ios-search" : "md-search"}
     />
   )
 };
@@ -51,7 +51,7 @@ SettingsStack.navigationOptions = {
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
       focused={focused}
-      name={Platform.OS === "ios" ? "ios-options" : "md-options"}
+      name={Platform.OS === "ios" ? "ios-settings" : "md-settings"}
     />
   )
 };

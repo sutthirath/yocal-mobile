@@ -1,15 +1,15 @@
 import React from "react";
-import { StyleSheet, Text, View, Image } from "react-native";
+import { StyleSheet, Text, View, Image, ScrollView } from "react-native";
 import profile from "../assets/images/profile.jpg";
 
-export default class HomeScreen extends React.Component {
+export default class DashScreen extends React.Component {
   static navigationOptions = {
-    header: null
+    title: "Dashboard"
   };
 
   render() {
     return (
-      <View style={styles.container}>
+      <ScrollView style={styles.container}>
         <View style={styles.user}>
           <View>
             <Image
@@ -22,7 +22,7 @@ export default class HomeScreen extends React.Component {
             <Text>Sean Vilaysane</Text>
           </View>
         </View>
-      </View>
+      </ScrollView>
     );
   }
 }
@@ -30,11 +30,11 @@ export default class HomeScreen extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingTop: 60,
     backgroundColor: "#FCD411"
   },
   user: {
-    alignItems: "center"
+    alignItems: "center",
+    paddingTop: 15
   },
   profileImg: {
     height: 150,
