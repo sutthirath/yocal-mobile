@@ -7,7 +7,7 @@ import {
 
 import TabBarIcon from "../components/TabBarIcon";
 import HomeScreen from "../screens/DashScreen";
-import LinksScreen from "../screens/SearchScreen";
+import LinksScreen from "../screens/ExploreScreen";
 import SettingsScreen from "../screens/SettingsScreen";
 
 const HomeStack = createStackNavigator({
@@ -33,11 +33,11 @@ const LinksStack = createStackNavigator({
 });
 
 LinksStack.navigationOptions = {
-  tabBarLabel: "Search",
+  tabBarLabel: "Explore",
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
       focused={focused}
-      name={Platform.OS === "ios" ? "ios-search" : "md-search"}
+      name={Platform.OS === "ios" ? "ios-map" : "md-map"}
     />
   )
 };
