@@ -4,35 +4,34 @@ import {
   createStackNavigator,
   createBottomTabNavigator
 } from "react-navigation";
-
 import TabBarIcon from "../components/TabBarIcon";
-import HomeScreen from "../screens/DashScreen";
-import LinksScreen from "../screens/ExploreScreen";
-import SettingsScreen from "../screens/SettingsScreen";
+import DashScreen from "../screens/DashScreen";
+import ExploreScreen from "../screens/ExploreScreen";
+import ExperienceScreen from "../screens/ExperienceScreen";
 
-const HomeStack = createStackNavigator({
-  Home: HomeScreen
+const DashStack = createStackNavigator({
+  Dash: DashScreen
 });
 
-HomeStack.navigationOptions = {
+DashStack.navigationOptions = {
   tabBarLabel: "Dashboard",
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
       focused={focused}
       name={
         Platform.OS === "ios"
-          ? `ios-chatbubbles${focused ? "" : "-outline"}`
-          : "md-chatbubbles"
+          ? `ios-square${focused ? "" : "-outline"}`
+          : "md-square"
       }
     />
   )
 };
 
-const LinksStack = createStackNavigator({
-  Links: LinksScreen
+const ExploreStack = createStackNavigator({
+  Explore: ExploreScreen
 });
 
-LinksStack.navigationOptions = {
+ExploreStack.navigationOptions = {
   tabBarLabel: "Explore",
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
@@ -42,22 +41,22 @@ LinksStack.navigationOptions = {
   )
 };
 
-const SettingsStack = createStackNavigator({
-  Settings: SettingsScreen
+const ExperienceStack = createStackNavigator({
+  Experience: ExperienceScreen
 });
 
-SettingsStack.navigationOptions = {
-  tabBarLabel: "Settings",
+ExperienceStack.navigationOptions = {
+  tabBarLabel: "Experience",
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
       focused={focused}
-      name={Platform.OS === "ios" ? "ios-settings" : "md-settings"}
+      name={Platform.OS === "ios" ? "ios-flag" : "md-flag"}
     />
   )
 };
 
 export default createBottomTabNavigator({
-  HomeStack,
-  LinksStack,
-  SettingsStack
+  DashStack,
+  ExploreStack,
+  ExperienceStack
 });
